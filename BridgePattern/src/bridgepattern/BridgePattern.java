@@ -16,11 +16,13 @@ public class BridgePattern
     {
         Relatorio relatorio = new RelatorioPDF();
         relatorio.setPosProcessador(new Crypt());
-        
         relatorio.gerarRelatorio();
         
         relatorio = new RelatorioXLS();
         relatorio.setPosProcessador(new NoCrypt());
+        relatorio.gerarRelatorio();
+        
+        relatorio = new RelatorioPDF();
         relatorio.gerarRelatorio();
     }    
 }
