@@ -1,8 +1,10 @@
 package bridgepattern;
 
 import strategy.Crypt;
+import strategy.NoCrypt;
 import template.Relatorio;
 import template.RelatorioPDF;
+import template.RelatorioXLS;
 
 /**
  *
@@ -16,6 +18,9 @@ public class BridgePattern
         relatorio.setPosProcessador(new Crypt());
         
         relatorio.gerarRelatorio();
-        relatorio.posProcessar();
+        
+        relatorio = new RelatorioXLS();
+        relatorio.setPosProcessador(new NoCrypt());
+        relatorio.gerarRelatorio();
     }    
 }

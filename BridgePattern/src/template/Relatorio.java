@@ -20,6 +20,7 @@ public abstract class Relatorio
         buscarDados();
         calcular();
         exportar();
+        posProcessar();
     }
     
     private void buscarDados()
