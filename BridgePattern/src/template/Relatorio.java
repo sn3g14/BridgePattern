@@ -1,5 +1,6 @@
 package template;
 
+import nullObject.NaoFazNada;
 import strategy.PosProcessador;
 
 /**
@@ -8,7 +9,7 @@ import strategy.PosProcessador;
  */
 public abstract class Relatorio
 {
-    private PosProcessador posProcessador;
+    private PosProcessador posProcessador = new NaoFazNada();
     
     public void setPosProcessador(PosProcessador posProcessador)
     {
@@ -35,7 +36,7 @@ public abstract class Relatorio
     
     protected abstract void exportar();
     
-    public void posProcessar()
+    private void posProcessar()
     {
         posProcessador.posProcessar();
     }
